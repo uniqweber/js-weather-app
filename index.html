@@ -4,11 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-
     <title>Document</title>
   </head>
   <body>
-    <div class="text-4xl">Hello</div>
+    <main class="bg-slate-900 min-h-screen flex items-center justify-center">
+      <div
+        class="bg-gradient-to-br from-cyan-500 to-blue-500 p-5 rounded-lg w-80 sm:w-96 transition-all duration-300"
+      >
+        <div class="bg-gradient-to-tr from-blue-500  to-cyan-500 p-3 sm:p-5 rounded-lg">
+          <h1
+            class="text-center uppercase text-3xl font-bold tracking-wide text-white leading-6"
+          >
+            Weather
+          </h1>
+          <p class="flex items-center justify-center gap-2 text-2xl uppercase font-bold mt-2 text-white">
+            <span id="day"></span>
+            <span id="time"></span>
+            <span id="am-pm"></span>
+          </p>
+        </div>
+        <div class="flex items-center gap-2 mt-4">
+          <input
+            type="text"
+            class="h-10 rounded-md w-full px-3.5 text-sm outline-none border focus:border-blue-500 duration-300"
+            placeholder="Enter City Name"
+            id="cityName"
+          />
+          <button
+            id="submitBtn"
+            class="bg-white h-10 w-14 flex items-center justify-center rounded-md border hover:border-blue-500 duration-300"
+          >
+            <img src="/assets/search.png" class="h-5" alt="" />
+          </button>
+        </div>
+        <p
+          id="error"
+          class="uppercase text-sm text-red-800 mt-2 ml-0.5 font-bold hidden"
+        >
+          Country name is not valid!
+        </p>
+        <div id="infoBox" class="text-white hidden">
+          <div class="text-center pb-10 pt-5">
+            <img
+              id="weatherImg"
+              src="./assets/clear.png"
+              class="h-32 mx-auto"
+              alt=""
+            />
+            <h3 class="text-6xl font-bold">
+              <span id="temp">3.59</span
+              ><span class="text-orange-200"> °C</span>
+            </h3>
+            <h2
+              id="city"
+              class="text-3xl uppercase font-semibold tracking-wider mt-2"
+            >
+              Germany
+            </h2>
+          </div>
+          <div
+            class="flex items-center justify-between bg-gradient-to-br from-blue-500 to-cyan-500 p-3 sm:p-5 rounded-lg text-sm gap-2"
+          >
+            <div class="flex items-center gap-2">
+              <img src="/assets/humidity.png" class="h-8 sm:h-8" alt="" />
+              <div>
+                <p class="text-orange-200"><span id="humidity">99</span> %</p>
+                <p class="font-semibold">Humidity</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <img src="/assets/wind.png" alt="" class="h-8 sm:h-10" />
+              <div>
+                <p class="text-orange-200"><span id="wind">0.78</span> km/h</p>
+                <p class="font-semibold">Wind Speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
